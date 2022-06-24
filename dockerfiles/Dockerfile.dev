@@ -7,6 +7,7 @@ FROM docker/buildx-bin:${BUILDX_VERSION} AS buildx
 
 FROM golang:${GO_VERSION}-alpine AS golang
 ENV  CGO_ENABLED=0
+ENV GOPROXY="https://goproxy.cn"
 
 FROM golang AS gotestsum
 ARG GOTESTSUM_VERSION=v0.4.0

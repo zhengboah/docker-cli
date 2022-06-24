@@ -54,6 +54,7 @@ func NewPullCommand(dockerCli command.Cli) *cobra.Command {
 
 // RunPull performs a pull against the engine based on the specified options
 func RunPull(cli command.Cli, opts PullOptions) error {
+	fmt.Fprintf(cli.Out(), "test pull..........\n")
 	distributionRef, err := reference.ParseNormalizedNamed(opts.remote)
 	switch {
 	case err != nil:
